@@ -22,8 +22,8 @@ app.use('/api',route);
 
 app.use(express.static(path.join(__dirname,'public')));
 
-app.listen(port,()=>{
-    console.log('Listening on port to.. '+ port);
+app.listen(process.env.PORT || 5000,()=>{
+    console.log('Listening on port to.. '+ process.env.PORT);
 });
 
 mongoose.connect('mongodb://admin:dbadmin123@ds143953.mlab.com:43953/meanstackdb',{ useNewUrlParser: true } );
