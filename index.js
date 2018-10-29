@@ -26,7 +26,7 @@ app.listen(port,()=>{
     console.log('Listening on port to.. '+ port);
 });
 
-mongoose.connect('mongodb://localhost:27017/users',{ useNewUrlParser: true } );
+mongoose.connect('mongodb://admin:dbadmin123@ds143953.mlab.com:43953/meanstackdb',{ useNewUrlParser: true } );
 
 mongoose.connection.on('connected',()=>{
     console.log('Mongoose connected successfully');
