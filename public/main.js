@@ -342,15 +342,15 @@ var UserServiceService = /** @class */ (function () {
         this.http = http;
     }
     UserServiceService.prototype.getUsers = function () {
-        return this.http.get('http://localhost:3000/api/retrieve');
+        return this.http.get('/api/retrieve');
     };
     UserServiceService.prototype.addUser = function (newUser) {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('content-Type', 'application/JSON');
-        return this.http.post('http://localhost:3000/api/add', newUser, { headers: headers });
+        return this.http.post('/api/add', newUser, { headers: headers });
     };
     UserServiceService.prototype.deleteUser = function (id) {
-        return this.http.delete('http://localhost:3000/api/delete/' + id);
+        return this.http.delete('/api/delete/' + id);
     };
     UserServiceService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
