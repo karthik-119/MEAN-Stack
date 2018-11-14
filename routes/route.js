@@ -28,7 +28,6 @@ route.get('/retrieve',(req,res,next)=>{
         res.json(Users);
     })
 })
-
 route.delete('/delete/:id',(req,res,next)=>{
     User.deleteOne({_id:req.params.id},function(err,result){
         if(err){

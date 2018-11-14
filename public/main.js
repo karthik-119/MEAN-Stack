@@ -34,6 +34,55 @@ module.exports = "@charset \"UTF-8\";\r\n\r\n/*!\r\n * animate.css -http://daned
 
 /***/ }),
 
+/***/ "./src/app/app-routing.module.ts":
+/*!***************************************!*\
+  !*** ./src/app/app-routing.module.ts ***!
+  \***************************************/
+/*! exports provided: AppRoutingModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppRoutingModule", function() { return AppRoutingModule; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
+/* harmony import */ var _users_users_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./users/users.component */ "./src/app/users/users.component.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+var routes = [
+    { path: 'users', component: _users_users_component__WEBPACK_IMPORTED_MODULE_3__["UsersComponent"] },
+    { path: '', component: _home_home_component__WEBPACK_IMPORTED_MODULE_2__["HomeComponent"] }
+];
+var AppRoutingModule = /** @class */ (function () {
+    function AppRoutingModule() {
+    }
+    AppRoutingModule = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
+            imports: [
+                _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterModule"].forRoot(routes), _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"]
+            ],
+            exports: [_angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterModule"]],
+            declarations: []
+        })
+    ], AppRoutingModule);
+    return AppRoutingModule;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/app.component.css":
 /*!***********************************!*\
   !*** ./src/app/app.component.css ***!
@@ -52,7 +101,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<div style=\"text-align:center\">\n  <h1>\n    Welcome to {{ title }}!\n  </h1>\n  <img width=\"300\" alt=\"Angular Logo\" src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==\">\n</div>\n<app-users></app-users>\n\n\n"
+module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<div style=\"text-align:center\">\n </div>\n<router-outlet></router-outlet>\n\n\n"
 
 /***/ }),
 
@@ -112,12 +161,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _users_users_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./users/users.component */ "./src/app/users/users.component.ts");
 /* harmony import */ var _user_service_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./user-service.service */ "./src/app/user-service.service.ts");
 /* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
+/* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
+/* harmony import */ var _angular_material_card__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/material/card */ "./node_modules/@angular/material/esm5/card.es5.js");
+/* harmony import */ var _angular_material_radio__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/material/radio */ "./node_modules/@angular/material/esm5/radio.es5.js");
+/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/material/button */ "./node_modules/@angular/material/esm5/button.es5.js");
+/* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/material/input */ "./node_modules/@angular/material/esm5/input.es5.js");
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
+
+
+
+
 
 
 
@@ -134,20 +195,119 @@ var AppModule = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             declarations: [
                 _app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"],
-                _users_users_component__WEBPACK_IMPORTED_MODULE_6__["UsersComponent"]
+                _users_users_component__WEBPACK_IMPORTED_MODULE_6__["UsersComponent"],
+                _home_home_component__WEBPACK_IMPORTED_MODULE_9__["HomeComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
                 _angular_http__WEBPACK_IMPORTED_MODULE_3__["HttpModule"],
+                _angular_material_card__WEBPACK_IMPORTED_MODULE_10__["MatCardModule"],
                 _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_4__["ScrollingModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"],
-                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_8__["BrowserAnimationsModule"]
+                _angular_material_radio__WEBPACK_IMPORTED_MODULE_11__["MatRadioModule"],
+                _angular_material_input__WEBPACK_IMPORTED_MODULE_13__["MatInputModule"],
+                _angular_material_button__WEBPACK_IMPORTED_MODULE_12__["MatButtonModule"],
+                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_8__["BrowserAnimationsModule"],
+                _app_routing_module__WEBPACK_IMPORTED_MODULE_14__["AppRoutingModule"],
             ],
             providers: [_user_service_service__WEBPACK_IMPORTED_MODULE_7__["UserServiceService"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/home/home.component.css":
+/*!*****************************************!*\
+  !*** ./src/app/home/home.component.css ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".example-container {\r\n    display: flex;\r\n    flex-direction: column;\r\n    margin:  0px auto;\r\n  }\r\n  \r\n  .example-container > * {\r\n    width:-webkit-fit-content;\r\n    width:-moz-fit-content;\r\n    width:fit-content;\r\n    min-width: 350px;\r\n  }\r\n  \r\n  .content{\r\n      margin: 0px auto;\r\n      margin-top: 25px;\r\n      text-align: center;\r\n  }\r\n  \r\n  mat-form-field{\r\n      width: 300px;\r\n  }\r\n  \r\n  header{\r\n      height: 2.5em;\r\n      width: 100%;\r\n      background-color: rgb(71, 124, 194);\r\n      margin:0px auto;\r\n      font-size: 18px;\r\n      color:#ffffff;\r\n  }\r\n  \r\n  body{\r\n      background-color : #fdfdfdc9;\r\n  }\r\n  \r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9ob21lLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxjQUFjO0lBQ2QsdUJBQXVCO0lBQ3ZCLGtCQUFrQjtHQUNuQjs7RUFFRDtJQUNFLDBCQUFrQjtJQUFsQix1QkFBa0I7SUFBbEIsa0JBQWtCO0lBQ2xCLGlCQUFpQjtHQUNsQjs7RUFDRDtNQUNJLGlCQUFpQjtNQUNqQixpQkFBaUI7TUFDakIsbUJBQW1CO0dBQ3RCOztFQUNEO01BQ0ksYUFBYTtHQUNoQjs7RUFDRDtNQUNJLGNBQWM7TUFDZCxZQUFZO01BQ1osb0NBQW9DO01BQ3BDLGdCQUFnQjtNQUNoQixnQkFBZ0I7TUFDaEIsY0FBYztHQUNqQjs7RUFDRDtNQUNJLDZCQUE2QjtHQUNoQyIsImZpbGUiOiJzcmMvYXBwL2hvbWUvaG9tZS5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmV4YW1wbGUtY29udGFpbmVyIHtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xyXG4gICAgbWFyZ2luOiAgMHB4IGF1dG87XHJcbiAgfVxyXG4gIFxyXG4gIC5leGFtcGxlLWNvbnRhaW5lciA+ICoge1xyXG4gICAgd2lkdGg6Zml0LWNvbnRlbnQ7XHJcbiAgICBtaW4td2lkdGg6IDM1MHB4O1xyXG4gIH1cclxuICAuY29udGVudHtcclxuICAgICAgbWFyZ2luOiAwcHggYXV0bztcclxuICAgICAgbWFyZ2luLXRvcDogMjVweDtcclxuICAgICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gIH1cclxuICBtYXQtZm9ybS1maWVsZHtcclxuICAgICAgd2lkdGg6IDMwMHB4O1xyXG4gIH1cclxuICBoZWFkZXJ7XHJcbiAgICAgIGhlaWdodDogMi41ZW07XHJcbiAgICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2IoNzEsIDEyNCwgMTk0KTtcclxuICAgICAgbWFyZ2luOjBweCBhdXRvO1xyXG4gICAgICBmb250LXNpemU6IDE4cHg7XHJcbiAgICAgIGNvbG9yOiNmZmZmZmY7XHJcbiAgfVxyXG4gIGJvZHl7XHJcbiAgICAgIGJhY2tncm91bmQtY29sb3IgOiAjZmRmZGZkYzk7XHJcbiAgfVxyXG4gICJdfQ== */"
+
+/***/ }),
+
+/***/ "./src/app/home/home.component.html":
+/*!******************************************!*\
+  !*** ./src/app/home/home.component.html ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<body>\n<header>\n MeanStack App\n</header>\n<div class=\"example-container\">\n  <mat-card class=\"content\">\n  <mat-form-field>\n    <input matInput placeholder=\"FirstName\" [(ngModel)]=\"fname\">\n  </mat-form-field><br>\n  <mat-form-field>\n    <input matInput placeholder=\"LastName\" [(ngModel)]=\"lname\">\n  </mat-form-field><br>\n  <mat-form-field>\n      <input matInput placeholder=\"Email\" [(ngModel)]=\"email\">\n    </mat-form-field><br>\n    <mat-form-field>\n      <input matInput placeholder=\"Mobile\" [(ngModel)]=\"mobile\">\n    </mat-form-field><br>\n    <mat-radio-group class=\"example-radio-group\" [(ngModel)]=\"gender\">\n        <mat-radio-button class=\"example-radio-button\" *ngFor=\"let i of types\" [value]=\"i\">\n          {{i}}&nbsp;\n        </mat-radio-button>\n      </mat-radio-group><br><br>\n    <button mat-raised-button color=\"primary\" (click)=\"add()\">Sign up</button><br><br>\n    <button mat-raised-button color=\"warn\">Sign up with Gmail</button><br><br>\n    <button mat-raised-button color=\"primary\" (click)=getlist() >Get List</button>\n</mat-card>\n\n</div>\n<footer>\n\n</footer>\n</body>"
+
+/***/ }),
+
+/***/ "./src/app/home/home.component.ts":
+/*!****************************************!*\
+  !*** ./src/app/home/home.component.ts ***!
+  \****************************************/
+/*! exports provided: HomeComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeComponent", function() { return HomeComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _user_service_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../user-service.service */ "./src/app/user-service.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var HomeComponent = /** @class */ (function () {
+    function HomeComponent(userservice, router) {
+        this.userservice = userservice;
+        this.router = router;
+        this.types = ['Male', 'Female'];
+        this.fname = "";
+        this.lname = "";
+        this.email = "";
+    }
+    HomeComponent.prototype.ngOnInit = function () {
+    };
+    HomeComponent.prototype.get = function () {
+        var _this = this;
+        this.users = [];
+        this.userservice.getUsers().subscribe(function (data) { _this.users.push(data.json()); });
+    };
+    HomeComponent.prototype.add = function () {
+        var newUser = { "firstname": this.fname, "lastname": this.lname, "email": this.email, "gender": this.gender, "mobile": this.mobile };
+        this.userservice.addUser(newUser).subscribe(function (data) { });
+        this.get();
+    };
+    HomeComponent.prototype.delete = function (id) {
+        this.userservice.deleteUser(id).subscribe();
+        this.get();
+    };
+    HomeComponent.prototype.submit = function () {
+        console.log(this.fname + "" + this.lname + "" + this.email + "" + this.mobile + "" + this.gender);
+    };
+    HomeComponent.prototype.getlist = function () {
+        this.router.navigateByUrl('/users');
+    };
+    HomeComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-home',
+            template: __webpack_require__(/*! ./home.component.html */ "./src/app/home/home.component.html"),
+            styles: [__webpack_require__(/*! ./home.component.css */ "./src/app/home/home.component.css")]
+        }),
+        __metadata("design:paramtypes", [_user_service_service__WEBPACK_IMPORTED_MODULE_1__["UserServiceService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
+    ], HomeComponent);
+    return HomeComponent;
 }());
 
 
@@ -182,15 +342,15 @@ var UserServiceService = /** @class */ (function () {
         this.http = http;
     }
     UserServiceService.prototype.getUsers = function () {
-        return this.http.get('/api/retrieve');
+        return this.http.get('http://localhost:3000/api/retrieve');
     };
     UserServiceService.prototype.addUser = function (newUser) {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('content-Type', 'application/JSON');
-        return this.http.post('/api/add', newUser, { headers: headers });
+        return this.http.post('http://localhost:3000/api/add', newUser, { headers: headers });
     };
     UserServiceService.prototype.deleteUser = function (id) {
-        return this.http.delete('/api/delete/' + id);
+        return this.http.delete('http://localhost:3000/api/delete/' + id);
     };
     UserServiceService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
@@ -212,7 +372,7 @@ var UserServiceService = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n\n      \n<div class=\"form\">\n    FirstName : <input type=\"text\" [(ngModel)]=\"fname\" name=\"firstname\"><br>\n    LastName : <input type=\"text\" [(ngModel)]=\"lname\"><br>\n    Email : <input type=\"text\" [(ngModel)]=\"email\"><br>\n    Gender : <input type=\"text\" [(ngModel)]=\"gender\"><br>\n    Mobile number : <input type=\"number\" pattern=\"[789]{0-9}\" [(ngModel)]=\"mobile\">\n    <button (click)=\"add()\">Submit</button>\n</div>\n<button (click)=\"get()\">Get List</button>\n<div *ngFor=\"let i of users\">\n<cdk-virtual-scroll-viewport itemSize=\"100\">\n    <li *cdkVirtualFor=\"let j of i\" class=\"animated jackInTheBox\">\n        <h3>{{j.first_name}}  {{j.last_name}} <span> {{j.gender}}</span></h3>\n        <p>{{j.mobilenumber}} </p>\n        <p>{{j.email}}</p>\n        <button class=\"animated rollIn\" (click)=\"delete(j._id)\">Delete</button>\n    </li>\n  </cdk-virtual-scroll-viewport>\n</div>"
+module.exports = "<button mat-raised-button color=\"basic\" class=\"animated zoomIn\" (click)=\"get()\">Get List</button>\n<div *ngFor=\"let i of users\">\n<cdk-virtual-scroll-viewport itemSize=\"100\">\n    <li *cdkVirtualFor=\"let j of i\" class=\"animated jackInTheBox\">\n        <h3>{{j.first_name}}  {{j.last_name}} <span> {{j.gender}}</span></h3>\n        <p>{{j.mobilenumber}} </p>\n        <p>{{j.email}}</p>\n        <button mat-raised-button color=\"warn\" class=\"animated rollIn\" (click)=\"delete(j._id)\">Delete</button>\n    </li>\n  </cdk-virtual-scroll-viewport>\n</div>\n<button mat-raised-button color=\"basic\" class=\"animated tada\" (click)=\"btnClick()\">Back</button>\n"
 
 /***/ }),
 
@@ -239,6 +399,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UsersComponent", function() { return UsersComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _user_service_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../user-service.service */ "./src/app/user-service.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -250,9 +411,14 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
+
 var UsersComponent = /** @class */ (function () {
-    function UsersComponent(userservice) {
+    function UsersComponent(userservice, router) {
         this.userservice = userservice;
+        this.router = router;
+        this.btnClick = function () {
+            this.router.navigateByUrl('/');
+        };
         this.fname = "";
         this.lname = "";
         this.email = "";
@@ -280,7 +446,7 @@ var UsersComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./users.component.html */ "./src/app/users/users.component.html"),
             styles: [__webpack_require__(/*! ./users.component.scss */ "./src/app/users/users.component.scss"), __webpack_require__(/*! ../animate.css */ "./src/app/animate.css")]
         }),
-        __metadata("design:paramtypes", [_user_service_service__WEBPACK_IMPORTED_MODULE_1__["UserServiceService"]])
+        __metadata("design:paramtypes", [_user_service_service__WEBPACK_IMPORTED_MODULE_1__["UserServiceService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
     ], UsersComponent);
     return UsersComponent;
 }());
