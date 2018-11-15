@@ -163,13 +163,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _user_service_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./user-service.service */ "./src/app/user-service.service.ts");
 /* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
 /* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
-/* harmony import */ var _angular_material_card__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/material/card */ "./node_modules/@angular/material/esm5/card.es5.js");
-/* harmony import */ var _angular_material_radio__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/material/radio */ "./node_modules/@angular/material/esm5/radio.es5.js");
-/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/material/button */ "./node_modules/@angular/material/esm5/button.es5.js");
-/* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/material/input */ "./node_modules/@angular/material/esm5/input.es5.js");
-/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
-/* harmony import */ var angular_6_social_login__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! angular-6-social-login */ "./node_modules/angular-6-social-login/angular-6-social-login.umd.js");
-/* harmony import */ var angular_6_social_login__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(angular_6_social_login__WEBPACK_IMPORTED_MODULE_15__);
+/* harmony import */ var _angular_material_radio__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/material/radio */ "./node_modules/@angular/material/esm5/radio.es5.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+/* harmony import */ var angular_6_social_login__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! angular-6-social-login */ "./node_modules/angular-6-social-login/angular-6-social-login.umd.js");
+/* harmony import */ var angular_6_social_login__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(angular_6_social_login__WEBPACK_IMPORTED_MODULE_13__);
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -190,13 +188,11 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
-
-
 function getAuthServiceConfigs() {
-    var config = new angular_6_social_login__WEBPACK_IMPORTED_MODULE_15__["AuthServiceConfig"]([
+    var config = new angular_6_social_login__WEBPACK_IMPORTED_MODULE_13__["AuthServiceConfig"]([
         {
-            id: angular_6_social_login__WEBPACK_IMPORTED_MODULE_15__["GoogleLoginProvider"].PROVIDER_ID,
-            provider: new angular_6_social_login__WEBPACK_IMPORTED_MODULE_15__["GoogleLoginProvider"]("261386224191-hkavm7i5pah16bn32g2782rh2690ac32.apps.googleusercontent.com")
+            id: angular_6_social_login__WEBPACK_IMPORTED_MODULE_13__["GoogleLoginProvider"].PROVIDER_ID,
+            provider: new angular_6_social_login__WEBPACK_IMPORTED_MODULE_13__["GoogleLoginProvider"]("261386224191-hkavm7i5pah16bn32g2782rh2690ac32.apps.googleusercontent.com")
         }
     ]);
     return config;
@@ -214,18 +210,19 @@ var AppModule = /** @class */ (function () {
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
                 _angular_http__WEBPACK_IMPORTED_MODULE_3__["HttpModule"],
-                angular_6_social_login__WEBPACK_IMPORTED_MODULE_15__["SocialLoginModule"],
-                _angular_material_card__WEBPACK_IMPORTED_MODULE_10__["MatCardModule"],
+                angular_6_social_login__WEBPACK_IMPORTED_MODULE_13__["SocialLoginModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_11__["MatCheckboxModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_11__["MatCardModule"],
                 _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_4__["ScrollingModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"],
-                _angular_material_radio__WEBPACK_IMPORTED_MODULE_11__["MatRadioModule"],
-                _angular_material_input__WEBPACK_IMPORTED_MODULE_13__["MatInputModule"],
-                _angular_material_button__WEBPACK_IMPORTED_MODULE_12__["MatButtonModule"],
+                _angular_material_radio__WEBPACK_IMPORTED_MODULE_10__["MatRadioModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_11__["MatInputModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_11__["MatButtonModule"],
                 _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_8__["BrowserAnimationsModule"],
-                _app_routing_module__WEBPACK_IMPORTED_MODULE_14__["AppRoutingModule"],
+                _app_routing_module__WEBPACK_IMPORTED_MODULE_12__["AppRoutingModule"],
             ],
             providers: [_user_service_service__WEBPACK_IMPORTED_MODULE_7__["UserServiceService"], {
-                    provide: angular_6_social_login__WEBPACK_IMPORTED_MODULE_15__["AuthServiceConfig"],
+                    provide: angular_6_social_login__WEBPACK_IMPORTED_MODULE_13__["AuthServiceConfig"],
                     useFactory: getAuthServiceConfigs
                 }],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]]
@@ -245,7 +242,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".example-container {\r\n    display: flex;\r\n    flex-direction: column;\r\n    margin:  0px auto;\r\n  }\r\n  \r\n  .example-container > * {\r\n    width:-webkit-fit-content;\r\n    width:-moz-fit-content;\r\n    width:fit-content;\r\n    min-width: 350px;\r\n  }\r\n  \r\n  .content{\r\n      margin: 0px auto;\r\n      margin-top: 25px;\r\n      text-align: center;\r\n  }\r\n  \r\n  mat-form-field{\r\n      width: 300px;\r\n  }\r\n  \r\n  header{\r\n      height: 2.5em;\r\n      width: 100%;\r\n      background-color: rgb(71, 124, 194);\r\n      margin:0px auto;\r\n      font-size: 18px;\r\n      color:#ffffff;\r\n  }\r\n  \r\n  body{\r\n      background-color : #fdfdfdc9;\r\n  }\r\n  \r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9ob21lLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxjQUFjO0lBQ2QsdUJBQXVCO0lBQ3ZCLGtCQUFrQjtHQUNuQjs7RUFFRDtJQUNFLDBCQUFrQjtJQUFsQix1QkFBa0I7SUFBbEIsa0JBQWtCO0lBQ2xCLGlCQUFpQjtHQUNsQjs7RUFDRDtNQUNJLGlCQUFpQjtNQUNqQixpQkFBaUI7TUFDakIsbUJBQW1CO0dBQ3RCOztFQUNEO01BQ0ksYUFBYTtHQUNoQjs7RUFDRDtNQUNJLGNBQWM7TUFDZCxZQUFZO01BQ1osb0NBQW9DO01BQ3BDLGdCQUFnQjtNQUNoQixnQkFBZ0I7TUFDaEIsY0FBYztHQUNqQjs7RUFDRDtNQUNJLDZCQUE2QjtHQUNoQyIsImZpbGUiOiJzcmMvYXBwL2hvbWUvaG9tZS5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmV4YW1wbGUtY29udGFpbmVyIHtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xyXG4gICAgbWFyZ2luOiAgMHB4IGF1dG87XHJcbiAgfVxyXG4gIFxyXG4gIC5leGFtcGxlLWNvbnRhaW5lciA+ICoge1xyXG4gICAgd2lkdGg6Zml0LWNvbnRlbnQ7XHJcbiAgICBtaW4td2lkdGg6IDM1MHB4O1xyXG4gIH1cclxuICAuY29udGVudHtcclxuICAgICAgbWFyZ2luOiAwcHggYXV0bztcclxuICAgICAgbWFyZ2luLXRvcDogMjVweDtcclxuICAgICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gIH1cclxuICBtYXQtZm9ybS1maWVsZHtcclxuICAgICAgd2lkdGg6IDMwMHB4O1xyXG4gIH1cclxuICBoZWFkZXJ7XHJcbiAgICAgIGhlaWdodDogMi41ZW07XHJcbiAgICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2IoNzEsIDEyNCwgMTk0KTtcclxuICAgICAgbWFyZ2luOjBweCBhdXRvO1xyXG4gICAgICBmb250LXNpemU6IDE4cHg7XHJcbiAgICAgIGNvbG9yOiNmZmZmZmY7XHJcbiAgfVxyXG4gIGJvZHl7XHJcbiAgICAgIGJhY2tncm91bmQtY29sb3IgOiAjZmRmZGZkYzk7XHJcbiAgfVxyXG4gICJdfQ== */"
+module.exports = ".example-container {\r\n    display: flex;\r\n    flex-direction: column;\r\n    margin:  0px auto;\r\n  }\r\n  \r\n  .example-container > * {\r\n    width:-webkit-fit-content;\r\n    width:-moz-fit-content;\r\n    width:fit-content;\r\n    min-width: 350px;\r\n  }\r\n  \r\n  .content{\r\n      margin: 0px auto;\r\n      margin-top: 25px;\r\n      text-align: center;\r\n  }\r\n  \r\n  mat-form-field{\r\n      width: 300px;\r\n  }\r\n  \r\n  header{\r\n      height: 2.5em;\r\n      width: 100%;\r\n      background-color: rgb(71, 124, 194);\r\n      margin:0px auto;\r\n      font-size: 18px;\r\n      color:#ffffff;\r\n  }\r\n  \r\n  mat-hint {\r\n    font-size: 10px;\r\n    color: red;\r\n  }\r\n  \r\n  body{\r\n      background-color : #fdfdfdc9;\r\n  }\r\n  \r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9ob21lLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxjQUFjO0lBQ2QsdUJBQXVCO0lBQ3ZCLGtCQUFrQjtHQUNuQjs7RUFFRDtJQUNFLDBCQUFrQjtJQUFsQix1QkFBa0I7SUFBbEIsa0JBQWtCO0lBQ2xCLGlCQUFpQjtHQUNsQjs7RUFDRDtNQUNJLGlCQUFpQjtNQUNqQixpQkFBaUI7TUFDakIsbUJBQW1CO0dBQ3RCOztFQUNEO01BQ0ksYUFBYTtHQUNoQjs7RUFDRDtNQUNJLGNBQWM7TUFDZCxZQUFZO01BQ1osb0NBQW9DO01BQ3BDLGdCQUFnQjtNQUNoQixnQkFBZ0I7TUFDaEIsY0FBYztHQUNqQjs7RUFFRDtJQUNFLGdCQUFnQjtJQUNoQixXQUFXO0dBQ1o7O0VBRUQ7TUFDSSw2QkFBNkI7R0FDaEMiLCJmaWxlIjoic3JjL2FwcC9ob21lL2hvbWUuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5leGFtcGxlLWNvbnRhaW5lciB7XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcclxuICAgIG1hcmdpbjogIDBweCBhdXRvO1xyXG4gIH1cclxuICBcclxuICAuZXhhbXBsZS1jb250YWluZXIgPiAqIHtcclxuICAgIHdpZHRoOmZpdC1jb250ZW50O1xyXG4gICAgbWluLXdpZHRoOiAzNTBweDtcclxuICB9XHJcbiAgLmNvbnRlbnR7XHJcbiAgICAgIG1hcmdpbjogMHB4IGF1dG87XHJcbiAgICAgIG1hcmdpbi10b3A6IDI1cHg7XHJcbiAgICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICB9XHJcbiAgbWF0LWZvcm0tZmllbGR7XHJcbiAgICAgIHdpZHRoOiAzMDBweDtcclxuICB9XHJcbiAgaGVhZGVye1xyXG4gICAgICBoZWlnaHQ6IDIuNWVtO1xyXG4gICAgICB3aWR0aDogMTAwJTtcclxuICAgICAgYmFja2dyb3VuZC1jb2xvcjogcmdiKDcxLCAxMjQsIDE5NCk7XHJcbiAgICAgIG1hcmdpbjowcHggYXV0bztcclxuICAgICAgZm9udC1zaXplOiAxOHB4O1xyXG4gICAgICBjb2xvcjojZmZmZmZmO1xyXG4gIH1cclxuICBcclxuICBtYXQtaGludCB7XHJcbiAgICBmb250LXNpemU6IDEwcHg7XHJcbiAgICBjb2xvcjogcmVkO1xyXG4gIH1cclxuXHJcbiAgYm9keXtcclxuICAgICAgYmFja2dyb3VuZC1jb2xvciA6ICNmZGZkZmRjOTtcclxuICB9XHJcbiAgIl19 */"
 
 /***/ }),
 
@@ -256,7 +253,7 @@ module.exports = ".example-container {\r\n    display: flex;\r\n    flex-directi
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<body>\n<header>\n    <img src=\"/assets/img/mean-sideimg.png\" width=\"100\" height=\"60\">\n <h1>MeanStack App</h1>\n</header>\n<div class=\"example-container\">\n  <mat-card class=\"content\">\n  <mat-form-field>\n    <input matInput placeholder=\"FirstName\" [(ngModel)]=\"fname\">\n  </mat-form-field><br>\n  <mat-form-field>\n    <input matInput placeholder=\"LastName\" [(ngModel)]=\"lname\">\n  </mat-form-field><br>\n  <mat-form-field>\n      <input matInput placeholder=\"Email\" [(ngModel)]=\"email\">\n    </mat-form-field><br>\n    <mat-form-field>\n      <input matInput placeholder=\"Mobile\" [(ngModel)]=\"mobile\">\n    </mat-form-field><br>\n    <mat-radio-group class=\"example-radio-group\" [(ngModel)]=\"gender\">\n        <mat-radio-button class=\"example-radio-button\" *ngFor=\"let i of types\" [value]=\"i\">\n          {{i}}&nbsp;\n        </mat-radio-button>\n      </mat-radio-group><br><br>\n    <button mat-raised-button color=\"primary\" (click)=\"add()\">Sign up</button><br><br>\n    <button mat-raised-button color=\"warn\" (click)=\"socialSignIn('google')\">Sign up with Gmail</button><br><br>\n    <button mat-raised-button color=\"primary\" (click)=getlist() >Get List</button>\n</mat-card>\n</div>\n<footer>\n\n</footer>\n</body>"
+module.exports = "<body>\n<header>\n    <img src=\"/assets/img/mean-sideimg.png\" width=\"100\" height=\"60\">\n <h1>MeanStack App</h1>\n</header>\n<div class=\"example-container\">\n  <mat-card class=\"content\">\n  <mat-form-field>\n    <input #firstname matInput minLength=\"3\" name=\"fname\" maxlength=\"20\" placeholder=\"FirstName\" [(ngModel)]=\"fname\" required\n    pattern=\"[a-zA-Z][a-zA-Z ]+\" (keyup)=\"validatefName()\" (blur)=\"validateDetails()\">\n    <mat-hint>{{fnamehint}}</mat-hint>\n  </mat-form-field><br>\n  <mat-form-field>\n    <input #lastname matInput minLength=\"3\" name=\"lname\" maxlength=\"20\" placeholder=\"LastName\" [(ngModel)]=\"lname\" required\n    pattern=\"[a-zA-Z][a-zA-Z ]+\" (keyup)=\"validatelName()\" (blur)=\"validateDetails()\">\n    <mat-hint >{{lnamehint}}</mat-hint>\n  </mat-form-field><br>\n  <mat-form-field>\n      <input #Email matInput name=\"email\" pattern=\"^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$\" placeholder=\"Email\" [(ngModel)]=\"email\" required\n      (keyup)=\"validateEmail()\" (blur)=\"validateDetails()\">\n      <mat-hint >{{emailhint}}</mat-hint>\n  </mat-form-field><br>\n    <mat-form-field>\n      <input   #Mobile type=\"tel\" maxlength=\"10\" minlength=\"10\" pattern=\"^\\d{10}$\" matInput placeholder=\"Mobile\" [(ngModel)]=\"mobile\" required\n      (keyup)=\"validateMobile()\" (blur)=\"validateDetails()\">\n      <mat-hint float=\"right\">{{mobilehint}}</mat-hint>\n  </mat-form-field><br>\n    <mat-radio-group class=\"example-radio-group\" [(ngModel)]=\"gender\" required >\n        <mat-radio-button class=\"example-radio-button\" *ngFor=\"let i of types\" [value]=\"i\">\n          {{i}}&nbsp;\n        </mat-radio-button><mat-hint float=\"right\">{{genderhint}}</mat-hint>\n      </mat-radio-group><br><br>\n      <mat-checkbox [(ngModel)]=\"consent\">I accept terms and conditions</mat-checkbox><br>\n    <button mat-raised-button color=\"primary\" [disabled]=\"!isValid\" (click)=\"add()\">Sign up</button><br><br>\n    <button mat-raised-button color=\"warn\" (click)=\"socialSignIn('google')\">Sign up with Gmail</button><br><br>\n    <button mat-raised-button color=\"primary\" (click)=getlist() >Get List</button>\n</mat-card>\n</div>\n<footer>\n\n</footer>\n</body>"
 
 /***/ }),
 
@@ -273,8 +270,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _user_service_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../user-service.service */ "./src/app/user-service.service.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var angular_6_social_login__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! angular-6-social-login */ "./node_modules/angular-6-social-login/angular-6-social-login.umd.js");
-/* harmony import */ var angular_6_social_login__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(angular_6_social_login__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var email_validator__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! email-validator */ "./node_modules/email-validator/index.js");
+/* harmony import */ var email_validator__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(email_validator__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var angular_6_social_login__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! angular-6-social-login */ "./node_modules/angular-6-social-login/angular-6-social-login.umd.js");
+/* harmony import */ var angular_6_social_login__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(angular_6_social_login__WEBPACK_IMPORTED_MODULE_4__);
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -288,15 +287,19 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var HomeComponent = /** @class */ (function () {
     function HomeComponent(userservice, router, socialAuthService) {
         this.userservice = userservice;
         this.router = router;
         this.socialAuthService = socialAuthService;
+        this.msg = "";
+        this.flag = 1;
         this.types = ['Male', 'Female'];
         this.fname = "";
         this.lname = "";
         this.email = "";
+        this.isValid = false;
     }
     HomeComponent.prototype.ngOnInit = function () {
         this.get();
@@ -322,6 +325,8 @@ var HomeComponent = /** @class */ (function () {
         if (!this.isExists) {
             var newUser = { "firstname": this.fname, "lastname": this.lname, "email": this.email, "gender": this.gender, "mobile": this.mobile };
             this.userservice.addUser(newUser).subscribe(function (data) { });
+            window.alert('Details added successfully');
+            this.router.navigateByUrl('/users');
         }
         else {
             window.alert('Email already exists..Please try with different email');
@@ -341,7 +346,7 @@ var HomeComponent = /** @class */ (function () {
         var _this = this;
         var socialPlatformProvider;
         if (socialPlatform == "google") {
-            socialPlatformProvider = angular_6_social_login__WEBPACK_IMPORTED_MODULE_3__["GoogleLoginProvider"].PROVIDER_ID;
+            socialPlatformProvider = angular_6_social_login__WEBPACK_IMPORTED_MODULE_4__["GoogleLoginProvider"].PROVIDER_ID;
         }
         this.socialAuthService.signIn(socialPlatformProvider).then(function (userData) {
             var fullname;
@@ -354,13 +359,81 @@ var HomeComponent = /** @class */ (function () {
             // ...
         });
     };
+    HomeComponent.prototype.validateDetails = function () {
+        if (!this.validatefName()) {
+            this.flag = 0;
+        }
+        else if (!this.validatelName()) {
+            this.flag = 0;
+        }
+        else if (!this.validateMobile()) {
+            this.flag = 0;
+        }
+        else if (!this.validateEmail()) {
+            this.flag = 0;
+        }
+        else if ((this.gender == "")) {
+            this.genderhint = "please select one";
+            this.flag = 0;
+        }
+        else {
+            this.genderhint = "";
+            this.flag = 1;
+        }
+        if (this.flag == 1) {
+            this.isValid = true;
+        }
+        else
+            this.isValid = false;
+    };
+    ;
+    HomeComponent.prototype.validatefName = function () {
+        if (this.fname.length < 3 || this.fname.length > 20) {
+            this.flag = 0;
+            this.fnamehint = "FirstsName should be atleast 3 characters";
+            this.consent = false;
+            return false;
+        }
+        this.fnamehint = "";
+        return true;
+    };
+    HomeComponent.prototype.validatelName = function () {
+        if (this.lname.length < 3 || this.lname.length > 20) {
+            this.flag = 0;
+            this.lnamehint = "LastName should be atleast 3 characters";
+            this.consent = false;
+            return false;
+        }
+        this.lnamehint = "";
+        return true;
+    };
+    HomeComponent.prototype.validateMobile = function () {
+        if (this.mobile < 6000000000 || this.mobile > 9999999999) {
+            this.flag = 0;
+            this.mobilehint = "Mobile number should be 10 numbers";
+            this.consent = false;
+            return false;
+        }
+        this.mobilehint = "";
+        return true;
+    };
+    HomeComponent.prototype.validateEmail = function () {
+        if (!email_validator__WEBPACK_IMPORTED_MODULE_3__["validate"](this.email)) {
+            this.flag = 0;
+            this.emailhint = 'Email should be of valid format';
+            this.consent = false;
+            return false;
+        }
+        this.emailhint = '';
+        return true;
+    };
     HomeComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-home',
             template: __webpack_require__(/*! ./home.component.html */ "./src/app/home/home.component.html"),
             styles: [__webpack_require__(/*! ./home.component.css */ "./src/app/home/home.component.css")]
         }),
-        __metadata("design:paramtypes", [_user_service_service__WEBPACK_IMPORTED_MODULE_1__["UserServiceService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], angular_6_social_login__WEBPACK_IMPORTED_MODULE_3__["AuthService"]])
+        __metadata("design:paramtypes", [_user_service_service__WEBPACK_IMPORTED_MODULE_1__["UserServiceService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], angular_6_social_login__WEBPACK_IMPORTED_MODULE_4__["AuthService"]])
     ], HomeComponent);
     return HomeComponent;
 }());
