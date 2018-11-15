@@ -196,7 +196,7 @@ function getAuthServiceConfigs() {
     var config = new angular_6_social_login__WEBPACK_IMPORTED_MODULE_15__["AuthServiceConfig"]([
         {
             id: angular_6_social_login__WEBPACK_IMPORTED_MODULE_15__["GoogleLoginProvider"].PROVIDER_ID,
-            provider: new angular_6_social_login__WEBPACK_IMPORTED_MODULE_15__["GoogleLoginProvider"]("261386224191-r1cgc7vkdvv4er688unsp46lvme45svv.apps.googleusercontent.com")
+            provider: new angular_6_social_login__WEBPACK_IMPORTED_MODULE_15__["GoogleLoginProvider"]("261386224191-hkavm7i5pah16bn32g2782rh2690ac32.apps.googleusercontent.com")
         }
     ]);
     return config;
