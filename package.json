@@ -1,24 +1,31 @@
 {
-  "name": "herokuapp",
+  "name": "mean-stack",
   "version": "1.0.0",
-  "description": "",
+  "description": "Sample mean stack application",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karthik-119/MEAN-Stack.git"
+  },
+  "author": "karthik",
   "license": "ISC",
-  "engines": {
-    "node": "8.11.3"
+  "bugs": {
+    "url": "https://github.com/karthik-119/MEAN-Stack/issues"
   },
+  "homepage": "https://github.com/karthik-119/MEAN-Stack#readme",
   "dependencies": {
     "@angular/cli": "^7.0.3",
+    "angular-6-social-login": "^1.1.1",
     "body-parser": "^1.18.3",
     "cors": "^2.8.4",
     "express": "^4.16.3",
+    "googleapis": "^27.0.0",
     "mongoose": "^5.2.16",
-    "nodemon": "^1.18.4"
+    "nodemon": "^1.18.4",
+    "opn": "^5.4.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.10.0"

@@ -146,11 +146,12 @@ var AppComponent = /** @class */ (function () {
 /*!*******************************!*\
   !*** ./src/app/app.module.ts ***!
   \*******************************/
-/*! exports provided: AppModule */
+/*! exports provided: getAuthServiceConfigs, AppModule */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getAuthServiceConfigs", function() { return getAuthServiceConfigs; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppModule", function() { return AppModule; });
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
@@ -167,6 +168,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/material/button */ "./node_modules/@angular/material/esm5/button.es5.js");
 /* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/material/input */ "./node_modules/@angular/material/esm5/input.es5.js");
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+/* harmony import */ var angular_6_social_login__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! angular-6-social-login */ "./node_modules/angular-6-social-login/angular-6-social-login.umd.js");
+/* harmony import */ var angular_6_social_login__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(angular_6_social_login__WEBPACK_IMPORTED_MODULE_15__);
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -188,6 +191,16 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
+function getAuthServiceConfigs() {
+    var config = new angular_6_social_login__WEBPACK_IMPORTED_MODULE_15__["AuthServiceConfig"]([
+        {
+            id: angular_6_social_login__WEBPACK_IMPORTED_MODULE_15__["GoogleLoginProvider"].PROVIDER_ID,
+            provider: new angular_6_social_login__WEBPACK_IMPORTED_MODULE_15__["GoogleLoginProvider"]("261386224191-r1cgc7vkdvv4er688unsp46lvme45svv.apps.googleusercontent.com")
+        }
+    ]);
+    return config;
+}
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -201,6 +214,7 @@ var AppModule = /** @class */ (function () {
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
                 _angular_http__WEBPACK_IMPORTED_MODULE_3__["HttpModule"],
+                angular_6_social_login__WEBPACK_IMPORTED_MODULE_15__["SocialLoginModule"],
                 _angular_material_card__WEBPACK_IMPORTED_MODULE_10__["MatCardModule"],
                 _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_4__["ScrollingModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"],
@@ -210,7 +224,10 @@ var AppModule = /** @class */ (function () {
                 _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_8__["BrowserAnimationsModule"],
                 _app_routing_module__WEBPACK_IMPORTED_MODULE_14__["AppRoutingModule"],
             ],
-            providers: [_user_service_service__WEBPACK_IMPORTED_MODULE_7__["UserServiceService"]],
+            providers: [_user_service_service__WEBPACK_IMPORTED_MODULE_7__["UserServiceService"], {
+                    provide: angular_6_social_login__WEBPACK_IMPORTED_MODULE_15__["AuthServiceConfig"],
+                    useFactory: getAuthServiceConfigs
+                }],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]]
         })
     ], AppModule);
@@ -239,7 +256,7 @@ module.exports = ".example-container {\r\n    display: flex;\r\n    flex-directi
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<body>\n<header>\n    <img src=\"/assets/img/mean-sideimg.png\" width=\"100\" height=\"60\">\n <h1>MeanStack App</h1>\n</header>\n<div class=\"example-container\">\n  <mat-card class=\"content\">\n  <mat-form-field>\n    <input matInput placeholder=\"FirstName\" [(ngModel)]=\"fname\">\n  </mat-form-field><br>\n  <mat-form-field>\n    <input matInput placeholder=\"LastName\" [(ngModel)]=\"lname\">\n  </mat-form-field><br>\n  <mat-form-field>\n      <input matInput placeholder=\"Email\" [(ngModel)]=\"email\">\n    </mat-form-field><br>\n    <mat-form-field>\n      <input matInput placeholder=\"Mobile\" [(ngModel)]=\"mobile\">\n    </mat-form-field><br>\n    <mat-radio-group class=\"example-radio-group\" [(ngModel)]=\"gender\">\n        <mat-radio-button class=\"example-radio-button\" *ngFor=\"let i of types\" [value]=\"i\">\n          {{i}}&nbsp;\n        </mat-radio-button>\n      </mat-radio-group><br><br>\n    <button mat-raised-button color=\"primary\" (click)=\"add()\">Sign up</button><br><br>\n    <button mat-raised-button color=\"warn\">Sign up with Gmail</button><br><br>\n    <button mat-raised-button color=\"primary\" (click)=getlist() >Get List</button>\n</mat-card>\n\n</div>\n<footer>\n\n</footer>\n</body>"
+module.exports = "<body>\n<header>\n    <img src=\"/assets/img/mean-sideimg.png\" width=\"100\" height=\"60\">\n <h1>MeanStack App</h1>\n</header>\n<div class=\"example-container\">\n  <mat-card class=\"content\">\n  <mat-form-field>\n    <input matInput placeholder=\"FirstName\" [(ngModel)]=\"fname\">\n  </mat-form-field><br>\n  <mat-form-field>\n    <input matInput placeholder=\"LastName\" [(ngModel)]=\"lname\">\n  </mat-form-field><br>\n  <mat-form-field>\n      <input matInput placeholder=\"Email\" [(ngModel)]=\"email\">\n    </mat-form-field><br>\n    <mat-form-field>\n      <input matInput placeholder=\"Mobile\" [(ngModel)]=\"mobile\">\n    </mat-form-field><br>\n    <mat-radio-group class=\"example-radio-group\" [(ngModel)]=\"gender\">\n        <mat-radio-button class=\"example-radio-button\" *ngFor=\"let i of types\" [value]=\"i\">\n          {{i}}&nbsp;\n        </mat-radio-button>\n      </mat-radio-group><br><br>\n    <button mat-raised-button color=\"primary\" (click)=\"add()\">Sign up</button><br><br>\n    <button mat-raised-button color=\"warn\" (click)=\"socialSignIn('google')\">Sign up with Gmail</button><br><br>\n    <button mat-raised-button color=\"primary\" (click)=getlist() >Get List</button>\n</mat-card>\n</div>\n<footer>\n\n</footer>\n</body>"
 
 /***/ }),
 
@@ -256,6 +273,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _user_service_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../user-service.service */ "./src/app/user-service.service.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var angular_6_social_login__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! angular-6-social-login */ "./node_modules/angular-6-social-login/angular-6-social-login.umd.js");
+/* harmony import */ var angular_6_social_login__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(angular_6_social_login__WEBPACK_IMPORTED_MODULE_3__);
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -268,16 +287,19 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var HomeComponent = /** @class */ (function () {
-    function HomeComponent(userservice, router) {
+    function HomeComponent(userservice, router, socialAuthService) {
         this.userservice = userservice;
         this.router = router;
+        this.socialAuthService = socialAuthService;
         this.types = ['Male', 'Female'];
         this.fname = "";
         this.lname = "";
         this.email = "";
     }
     HomeComponent.prototype.ngOnInit = function () {
+        this.get();
     };
     HomeComponent.prototype.get = function () {
         var _this = this;
@@ -285,9 +307,25 @@ var HomeComponent = /** @class */ (function () {
         this.userservice.getUsers().subscribe(function (data) { _this.users.push(data.json()); });
     };
     HomeComponent.prototype.add = function () {
-        var newUser = { "firstname": this.fname, "lastname": this.lname, "email": this.email, "gender": this.gender, "mobile": this.mobile };
-        this.userservice.addUser(newUser).subscribe(function (data) { });
-        this.get();
+        for (var _i = 0, _a = this.users; _i < _a.length; _i++) {
+            var i = _a[_i];
+            for (var _b = 0, i_1 = i; _b < i_1.length; _b++) {
+                var j = i_1[_b];
+                if (this.email.match(j.email)) {
+                    this.isExists = true;
+                    break;
+                }
+                else
+                    this.isExists = false;
+            }
+        }
+        if (!this.isExists) {
+            var newUser = { "firstname": this.fname, "lastname": this.lname, "email": this.email, "gender": this.gender, "mobile": this.mobile };
+            this.userservice.addUser(newUser).subscribe(function (data) { });
+        }
+        else {
+            window.alert('Email already exists..Please try with different email');
+        }
     };
     HomeComponent.prototype.delete = function (id) {
         this.userservice.deleteUser(id).subscribe();
@@ -299,13 +337,27 @@ var HomeComponent = /** @class */ (function () {
     HomeComponent.prototype.getlist = function () {
         this.router.navigateByUrl('/users');
     };
+    HomeComponent.prototype.oauth2 = function () {
+        window.open(' https://accounts.google.com/o/oauth2/v2/auth?access_type=offline&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile&response_type=code&client_id=261386224191-r1cgc7vkdvv4er688unsp46lvme45svv.apps.googleusercontent.com&redirect_uri=http%3A%2F%2Flocalhost');
+    };
+    HomeComponent.prototype.socialSignIn = function (socialPlatform) {
+        var socialPlatformProvider;
+        if (socialPlatform == "google") {
+            socialPlatformProvider = angular_6_social_login__WEBPACK_IMPORTED_MODULE_3__["GoogleLoginProvider"].PROVIDER_ID;
+        }
+        this.socialAuthService.signIn(socialPlatformProvider).then(function (userData) {
+            console.log(socialPlatform + " sign in data : ", userData);
+            // Now sign-in with userData
+            // ...
+        });
+    };
     HomeComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-home',
             template: __webpack_require__(/*! ./home.component.html */ "./src/app/home/home.component.html"),
             styles: [__webpack_require__(/*! ./home.component.css */ "./src/app/home/home.component.css")]
         }),
-        __metadata("design:paramtypes", [_user_service_service__WEBPACK_IMPORTED_MODULE_1__["UserServiceService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
+        __metadata("design:paramtypes", [_user_service_service__WEBPACK_IMPORTED_MODULE_1__["UserServiceService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], angular_6_social_login__WEBPACK_IMPORTED_MODULE_3__["AuthService"]])
     ], HomeComponent);
     return HomeComponent;
 }());
@@ -351,6 +403,11 @@ var UserServiceService = /** @class */ (function () {
     };
     UserServiceService.prototype.deleteUser = function (id) {
         return this.http.delete('/api/delete/' + id);
+    };
+    UserServiceService.prototype.authenticateUser = function () {
+        console.log('service called');
+        var data;
+        return this.http.get('/api/oauth2');
     };
     UserServiceService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
