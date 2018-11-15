@@ -350,7 +350,6 @@ var HomeComponent = /** @class */ (function () {
         }
         this.socialAuthService.signIn(socialPlatformProvider).then(function (userData) {
             var fullname;
-            console.log(socialPlatform + " sign in data : ", userData);
             fullname = userData.name.split(" ");
             _this.fname = fullname[0];
             _this.lname = fullname[1];
