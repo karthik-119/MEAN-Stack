@@ -337,16 +337,19 @@ var HomeComponent = /** @class */ (function () {
     HomeComponent.prototype.getlist = function () {
         this.router.navigateByUrl('/users');
     };
-    HomeComponent.prototype.oauth2 = function () {
-        window.open(' https://accounts.google.com/o/oauth2/v2/auth?access_type=offline&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile&response_type=code&client_id=261386224191-r1cgc7vkdvv4er688unsp46lvme45svv.apps.googleusercontent.com&redirect_uri=http%3A%2F%2Flocalhost');
-    };
     HomeComponent.prototype.socialSignIn = function (socialPlatform) {
+        var _this = this;
         var socialPlatformProvider;
         if (socialPlatform == "google") {
             socialPlatformProvider = angular_6_social_login__WEBPACK_IMPORTED_MODULE_3__["GoogleLoginProvider"].PROVIDER_ID;
         }
         this.socialAuthService.signIn(socialPlatformProvider).then(function (userData) {
+            var fullname;
             console.log(socialPlatform + " sign in data : ", userData);
+            fullname = userData.name.split(" ");
+            _this.fname = fullname[0];
+            _this.lname = fullname[1];
+            _this.email = userData.email;
             // Now sign-in with userData
             // ...
         });
