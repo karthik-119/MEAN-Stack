@@ -4,6 +4,7 @@ const User = require('../models/users')
 const fs = require('fs');
 const readline = require('readline');
 const {google} = require('googleapis');
+var path = require('path');
 
 // If modifying these scopes, delete token.json.
 const SCOPES = ['https://www.googleapis.com/auth/userinfo.profile'];
@@ -132,26 +133,11 @@ route.post('/add',(req,res,next)=>{
 
     });
 });
-
-route.get('/oauth2',(req,res,next)=>{
-    oAuth2Client.getToken(req, (err, token) => {
-        if (err) return console.error('Error retrieving access token', err);
-        oAuth2Client.setCredentials(token);
-        // Store the token to disk for later program executions
-        fs.writeFile(TOKEN_PATH, JSON.stringify(token), (err) => {
-          if (err) return console.error(err);
-          console.log('Token stored to', TOKEN_PATH);
-        });
-        callback(oAuth2Client);
-      });s
-    console.log('calling oauth');
-    console.log("Oauth:"+req);
-    if(Oauth2.FirstName!=''&&Oauth2.LastName!=''){
-        res.send(Oauth2.FirstName+","+Oauth2.LastName);
-        console.log(Oauth2.FirstName+","+Oauth2.LastName);
-    }
-    res.send('Nothing');
-
+route.get('/privacypolicy',(req,res,next)=>{
+    res.sendFile(path.join(__dirname + '/PrivacyPolicy.html'));
+})
+route.get('/TermsnServices',(req,res,next)=>{
+    res.sendFile(path.join(__dirname + '/TermnServices.html'));
 })
 route.get('/retrieve',(req,res,next)=>{
     User.find(function(err,Users){
