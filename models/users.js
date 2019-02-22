@@ -10,6 +10,10 @@ const userSchema = mongoose.Schema({
         type : String,
         required : false
     },
+    password : {
+        type : String,
+        required : true
+    },
     mobilenumber :{
         type : Number,
         required : true
@@ -20,6 +24,14 @@ const userSchema = mongoose.Schema({
     },
     gender : {
         type : String,
+        required : true
+    },
+    hashlink : {
+        type  : String,
+        required : false
+    },
+    verifiedUser : {
+        type : Number,
         required : true
     }
 

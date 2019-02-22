@@ -21,11 +21,16 @@ app.use(bodyparser.json());
 app.use('/api',route);
 
 app.use(express.static(path.join(__dirname,'public')));
-
-app.listen(process.env.PORT || 3000,()=>{
-    console.log('Listening on port to.. '+ process.env.PORT);
+// Send all other requests to the Angular app
+app.get('/*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/index.html'));
 });
-
+app.listen(port,()=>{
+    console.log('Listening on port to.. '+ port);
+});
+app.use(function(req, res, next) {
+    res.status(404).sendFile(path.join(__dirname + '/404.html'));
+  });
 mongoose.connect('mongodb://admin:dbadmin123@ds143953.mlab.com:43953/meanstackdb',{ useNewUrlParser: true } );
 
 mongoose.connection.on('connected',()=>{

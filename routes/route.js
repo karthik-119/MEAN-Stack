@@ -1,159 +1,177 @@
 const express = require('express');
 var route= express.Router();
-const User = require('../models/users')
-const fs = require('fs');
-const readline = require('readline');
-const {google} = require('googleapis');
+const User = require('../models/users');
+const Questions = require('../models/ques');
 var path = require('path');
+var passwordHash = require('password-hash');
+ var app =express();
+ var nodemailer = require('nodemailer');
+ var session = require('express-session');
 
-// If modifying these scopes, delete token.json.
-const SCOPES = ['https://www.googleapis.com/auth/userinfo.profile'];
-// The file token.json stores the user's access and refresh tokens, and is
-// created automatically when the authorization flow completes for the first
-// time.
-const TOKEN_PATH = 'token.json';
-FirstName='';
-LastName='';
-// Load client secrets from a local file.
-fs.readFile('credentials.json', (err, content) => {
-  if (err) return console.log('Error loading client secret file:', err);
-  // Authorize a client with credentials, then call the Gmail API.
-  authorize(JSON.parse(content), getuserInfo);
-});
-
-/**
- * Create an OAuth2 client with the given credentials, and then execute the
- * given callback function.
- * @param {Object} credentials The authorization client credentials.
- * @param {function} callback The callback to call with the authorized client.
- */
-function authorize(credentials, callback) {
-  const {client_secret, client_id, redirect_uris} = credentials.installed;
-  const oAuth2Client = new google.auth.OAuth2(
-      client_id, client_secret, redirect_uris[0]);
-
-  // Check if we have previously stored a token.
-  fs.readFile(TOKEN_PATH, (err, token) => {
-    if (err) return getNewToken(oAuth2Client, callback);
-    oAuth2Client.setCredentials(JSON.parse(token));
-    callback(oAuth2Client);
+ var transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: 'meanstackapp.blog@gmail.com',
+      pass: 'meanstack@123'
+    }
   });
-}
-
-/**
- * Get and store new token after prompting for user authorization, and then
- * execute the given callback with the authorized OAuth2 client.
- * @param {google.auth.OAuth2} oAuth2Client The OAuth2 client to get token for.
- * @param {getEventsCallback} callback The callback for the authorized client.
- */
-function getNewToken(oAuth2Client, callback) {
-  const authUrl = oAuth2Client.generateAuthUrl({
-    access_type: 'offline',
-    scope: SCOPES,
-  });
-
-//   console.log('Authorize this app by visiting this url:', authUrl);
-  const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout,
-  });
-//   rl.question('Enter the code from that page here: ', (code) => {
-//     rl.close();
-//     oAuth2Client.getToken(code, (err, token) => {
-//       if (err) return console.error('Error retrieving access token', err);
-//       oAuth2Client.setCredentials(token);
-//       // Store the token to disk for later program executions
-//       fs.writeFile(TOKEN_PATH, JSON.stringify(token), (err) => {
-//         if (err) return console.error(err);
-//         console.log('Token stored to', TOKEN_PATH);
-//       });
-//       callback(oAuth2Client);
-//     });
-//   });
-}
-
-/**
- * Lists the labels in the user's account.
- *
- * @param {google.auth.OAuth2} auth An authorized OAuth2 client.
- */
-function getuserInfo(auth) {
   
-//   const gmail = google.gmail({version: 'v1', auth});
-//   gmail.users.labels.list({
-//     userId: 'me',
-//   }, (err, res) => {
-//     if (err) return console.log('The API returned an error: ' + err);
-//     const labels = res.data.labels;
-//     if (labels.length) {
-//       console.log('Labels:');
-//       labels.forEach((label) => {
-//         console.log(`- ${label.name}`);
-//       });
-//     } else {
-//       console.log('No labels found.');
-//     }
-//   });
-var oauth2 = google.oauth2({
-    auth: auth,
-    version: 'v2'
+route.post('/verify',(req,res)=>{
+    User.findOne({email:req.body.email},function(err,result){
+        if(err)
+        res.json(err);
+        else{
+        if(result==null){
+        res.status(404).json({msg:"Email not found"});
+        }
+        else if(passwordHash.verify(req.body.password,result.password)){
+            if(result.verifiedUser!=1){
+                console.log('Account not verified');
+                res.status(403);
+            }
+            else if (typeof localStorage === "undefined" || localStorage === null) {
+                var LocalStorage = require('node-localstorage').LocalStorage;
+                localStorage = new LocalStorage('./scratch');
+                localStorage.setItem(result.email+"session",result.first_name);
+                res.json({"firstname":result.first_name,"email":result.email});
+            }
+        }
+        else
+        res.status(403).json({msg:"Invalid Password"});
+        }
+    })
 });
-
-oauth2.userinfo.v2.me.get(
-function(err, res) {
-if (err) {
-    console.log(err);
-} else {
-    FirstName=res.data.given_name;
-    LastName=res.data.family_name;
-    console.log(res.data.given_name+" "+res.data.family_name);
-}
-});
-}
-module.exports.authorize=authorize;
-module.exports.getuserInfo=getuserInfo;
-module.exports.getNewToken=getNewToken;
-module.exports.FirstName=FirstName;
-module.exports.LastName=LastName;
 route.post('/add',(req,res,next)=>{
+    var data = "dn2edn02knsdn221wmd9";
+    var crypto = require('crypto');
+    var hashedPassword = passwordHash.generate(req.body.password);
+    var verifylink = crypto.createHash('md5').update(data).digest("hex");
     let newUser = new User ({
         first_name : req.body.firstname,
         last_name : req.body.lastname,
+        password : hashedPassword,
         mobilenumber : req.body.mobile,
         gender : req.body.gender,
-        email : req.body.email
+        email : req.body.email,
+        hashlink : verifylink,
+        verifiedUser : 0
     });
     newUser.save((err,user)=>{
         if(err){
             res.status(500).json({msg:'Failed'+ err});
         }
         else{
+            var mailOptions = {
+                from: 'meanstackapp-noreply@gmail.com',
+                to: req.body.email,
+                subject: 'Account Verification',
+                html : '<h1>Verify your Account</h1>'+
+                        '<p>Click on the following link</p>'+
+                        'http://localhost:3000/api/accounts/verifyuser/'+verifylink
+              };
+              
+              transporter.sendMail(mailOptions, function(error, info){
+                if (error) {
+                  console.log(error);
+                } else {
+                  console.log('Email sent: ' + info.response);
+                }
+              });
             res.status(201).json({msg:user.first_name+' Added sucessfully'});
         }
 
     });
 });
+
 route.get('/privacypolicy',(req,res,next)=>{
     res.sendFile(path.join(__dirname + '/PrivacyPolicy.html'));
 })
 route.get('/TermsnServices',(req,res,next)=>{
     res.sendFile(path.join(__dirname + '/TermnServices.html'));
-})
-route.get('/retrieve',(req,res,next)=>{
-    User.find(function(err,Users){
-        res.json(Users);
+});
+route.get('/accounts/verifyuser/:hashlink',(req,res,next)=>{
+    User.findOne({hashlink:req.params.hashlink},function(err,result){
+        if(err){
+            res.status(500).json(err);
+        }
+        else{
+            if(result==null)
+            res.send('Something Went Wrong!!');
+            else
+            {
+                var myquery = { hashlink: req.params.hashlink };
+                var newvalues = { $set: {verifiedUser: 1, hashlink: req.params.hashlink } };
+                User.updateOne(myquery, newvalues, function(err, res) {
+                res.redirect('/');
+                 });
+            }   
+         }
     })
+
+});
+route.get('/retrieve',(req,res,next)=>{
+    User.find({},{password:0},function(err,Users){
+        if(err)
+        res.status(500).json(err);
+        else{
+        res.status(200).json(Users);
+        }
+    })
+});
+route.get('/qList',(req,res,next)=>{
+    Questions.find({},function(err,questions){
+        if(err)
+        res.status(500).json(err);
+        else{
+        res.status(200).json(questions);
+        }
+    })
+});
+route.get('/profile/:email',(req,res,next)=>{
+    User.findOne({email:req.params.email},{password:0},function(err,result){
+        if(err)
+        res.status(500).json(err);
+        else
+        res.status(201).json(result);
+    })
+});
+route.get('/logout/:email',(req,res,next)=>{
+    User.findOne({email:req.params.email},function(err,result){
+    if(localStorage.getItem(result.email+"session")!=undefined||localStorage.getItem(result.email+"session")!=null){
+    localStorage.removeItem(result.email+"session");
+    res.status(200).json({"msg":"Logged out successfully","status":200});
+    }
+    else
+    res.status(500),json({"msg":"Internal server error","status":500});
 })
+});
 route.delete('/delete/:id',(req,res,next)=>{
     User.deleteOne({_id:req.params.id},function(err,result){
         if(err){
-            res.json(err);
+            res.status(500).json(err);
         }
         else
         {
-            res.json(result);   
-             }
+            res.status(200).json(result);   
+        }
     });
+})
+route.post('/savequestion',(req,res,next)=>{
+    let newQuestion = new Questions({
+        first_name : req.body.first_name,
+        email : req.body.email,
+        questionTitle :req.body.questionTitle,
+        questionDescription : req.body.questionDescription,
+        createdDateTime : req.body.createdDateTime,
+    })
+    newQuestion.save((err,result)=>{
+        if(err)
+        res.status(500).json(err);
+        else
+        res.status(201).json({"Msg":"Question Posted Successfully"});
+
+    });
+
 })
 
 
