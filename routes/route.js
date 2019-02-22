@@ -67,7 +67,7 @@ route.post('/add',(req,res,next)=>{
                 subject: 'Account Verification',
                 html : '<h1>Verify your Account</h1>'+
                         '<p>Click on the following link</p>'+
-                        'http://localhost:3000/api/accounts/verifyuser/'+verifylink
+                        'https://meanstackwithoauth.herokuapp.com/api/accounts/verifyuser/'+verifylink
               };
               
               transporter.sendMail(mailOptions, function(error, info){
